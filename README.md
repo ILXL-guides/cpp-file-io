@@ -71,15 +71,24 @@ The example below shows how we iterate through an array and write its contents i
 
 ```cpp
 ofstream outputfile;
-outputfile.open("output.txt");
+outputfile.open("array_output.txt");
 
 int arr_values[5] = {3, 6, 2, 1, 5};
-outputfile << 5 << " "; // indicate how many elements will be saved
+outputfile << 5 << "\n"; // indicate how many elements will be saved
 for (int i = 0; i < 5; i++)
-  outputfile << arr_values[i] << " ";
-  
-outputfile.close();
+  outputfile << arr_values[i] << "\n";
+
+  outputfile.close();
 ```
+
+You can try compiling and running `array_output.cpp` to see an example of how this works.
+
+```
+g++ -std=c++17 array_output.cpp -o array_output
+./array_output
+```
+
+After running the program, you will notice that it produces a new file called `array_output.txt` that contains the data we wrote in the program.
 
 # Storing values from files into arrays
 The example below shows how we load data from a file and store it into an array. The limitation of arrays is that you need to define its size before using it. This example assumes that the first line of the data (output.txt) contains the number of elements and the rest are the values.
@@ -87,15 +96,28 @@ The example below shows how we load data from a file and store it into an array.
 Also, take note of the data type the array contains. In the example below, `arr_values` is an integer array, so when we extract values from the inputfile, it knows that it should retrieve an integer value so it can be stored into an integer-sized container.
 
 ```cpp
-ifstream inputfile;
-inputfile.open("output.txt");
-int size = 0;
-intputfile >> size; // identify the number of elements and use it to define the array size
+  ifstream inputfile;
+  inputfile.open("array_output.txt");
+  int size = 0;
+  inputfile >> size; // identify the number of elements and use it to define the array size
 
-int arr_values[size];
-for (int i = 0; i < size; i++)
-  intputfile >> arr_values[i];
-  
-intputfile.close();
+  // Store data into array
+  int arr_values[size];
+  for (int i = 0; i < size; i++)
+    inputfile >> arr_values[i];
 
+  // Display data stored in the array
+  for (int i = 0; i < size; i++)
+    cout << arr_values[i] << "\n";
+    
+  inputfile.close();
+```
+
+You can try compiling and running `array_input.cpp` to see an example of how this works.
+
+*This step assumes that you already ran array_output and created a file called `array_output.txt`. The program will throw an error if `array_output.txt` does not exist.*
+
+```
+g++ -std=c++17 array_input.cpp -o array_input
+./array_input
 ```

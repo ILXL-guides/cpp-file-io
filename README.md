@@ -84,6 +84,8 @@ outputfile.close();
 # Storing values from files into arrays
 The example below shows how we load data from a file and store it into an array. The limitation of arrays is that you need to define its size before using it. This example assumes that the first line of the data (output.txt) contains the number of elements and the rest are the values.
 
+Also, take note of the data type the array contains. In the example below, `arr_values` is an integer array, so when we extract values from the inputfile, it knows that it should retrieve an integer value so it can be stored into an integer-sized container.
+
 ```cpp
 ifstream inputfile;
 inputfile.open("output.txt");
@@ -92,7 +94,7 @@ intputfile >> size; // identify the number of elements and use it to define the 
 
 int arr_values[size];
 for (int i = 0; i < size; i++)
-  intputfile << arr_values[i];
+  intputfile >> arr_values[i];
   
 intputfile.close();
 

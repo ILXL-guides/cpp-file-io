@@ -74,7 +74,7 @@ ofstream outputfile;
 outputfile.open("output.txt");
 
 int arr_values[5] = {3, 6, 2, 1, 5};
-outputfile << 5 << " "; // indicate how many elements are saved
+outputfile << 5 << " "; // indicate how many elements will be saved
 for (int i = 0; i < 5; i++)
   outputfile << arr_values[i] << " ";
   

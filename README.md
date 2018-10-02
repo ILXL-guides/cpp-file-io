@@ -62,3 +62,38 @@ g++ -std=c++17 input.cpp -o input
 ```
 
 Running the program will read data from the file, store it in varialbes, and display the values of those variables.
+
+# Working with arrays
+Arrays are often useful when working with files. They allow us to store all values in an array then later write them to a file. Similarly, you can read values from a file and store them into an array.
+
+# Writing array values to files
+The example below shows how we iterate through an array and write its contents into a file. If you notice, it looks almost exactly like displaying an array's values to the screen, but we write it to the output filestream instead.
+
+```cpp
+ofstream outputfile;
+outputfile.open("output.txt");
+
+int arr_values[5] = {3, 6, 2, 1, 5};
+outputfile << 5 << " "; // indicate how many elements are saved
+for (int i = 0; i < 5; i++)
+  outputfile << arr_values[i] << " ";
+  
+outputfile.close();
+```
+
+# Storing values from files into arrays
+The example below shows how we load data from a file and store it into an array. The limitation of arrays is that you need to define its size before using it. This example assumes that the first line of the data (output.txt) contains the number of elements and the rest are the values.
+
+```cpp
+ifstream inputfile;
+inputfile.open("output.txt");
+int size = 0;
+intputfile >> size; // identify the number of elements and use it to define the array size
+
+int arr_values[size];
+for (int i = 0; i < size; i++)
+  intputfile << arr_values[i];
+  
+intputfile.close();
+
+```

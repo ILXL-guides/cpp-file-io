@@ -54,7 +54,7 @@ inputfile.close();
 
 You can try compiling and running `input.cpp` to see an example of how this works.
 
-*This step assumes that you already ran output and created a file called `output.txt`. The program will throw an error if `output.txt` does not exist.*
+*This step assumes that you already ran `output` and created a file called `output.txt`. The program will throw an error if `output.txt` does not exist.*
 
 ```
 g++ -std=c++17 input.cpp -o input

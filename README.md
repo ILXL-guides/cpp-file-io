@@ -115,7 +115,7 @@ Also, take note of the data type the array contains. In the example below, `arr_
 
 You can try compiling and running `array_input.cpp` to see an example of how this works.
 
-*This step assumes that you already ran array_output and created a file called `array_output.txt`. The program will throw an error if `array_output.txt` does not exist.*
+*This step assumes that you already ran `array_output` and created a file called `array_output.txt`. The program will throw an error if `array_output.txt` does not exist.*
 
 ```
 g++ -std=c++17 array_input.cpp -o array_input

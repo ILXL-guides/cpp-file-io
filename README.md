@@ -91,7 +91,7 @@ g++ -std=c++17 array_output.cpp -o array_output
 After running the program, you will notice that it produces a new file called `array_output.txt` that contains the data we wrote in the program.
 
 # Storing values from files into arrays
-The example below shows how we load data from a file and store it into an array. The limitation of arrays is that you need to define its size before using it. This example assumes that the first line of the data (output.txt) contains the number of elements and the rest are the values.
+The example below shows how we load data from a file and store it into an array. The limitation of arrays is that you need to define its size before using it. This example assumes that the first line of the data (output.txt) contains the number of elements and the rest are the values. However, not all files are formatted this way. If this is not the case then you will need to use a different method for loading values.
 
 Also, take note of the data type the array contains. In the example below, `arr_values` is an integer array, so when we extract values from the inputfile, it knows that it should retrieve an integer value so it can be stored into an integer-sized container.
 
@@ -100,6 +100,8 @@ Also, take note of the data type the array contains. In the example below, `arr_
   inputfile.open("array_output.txt");
   int size = 0;
   inputfile >> size; // identify the number of elements and use it to define the array size
+                     // only works for this example, that assumes a size is provided before
+                     // the values
 
   // Store data into array
   int arr_values[size];

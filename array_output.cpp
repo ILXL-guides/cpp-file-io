@@ -1,10 +1,8 @@
 #include <fstream>
 #include <iostream>
 
-using namespace std;
-
 int main() {
-  ofstream outputfile;
+  std::ofstream outputfile;
   outputfile.open("array_output.txt");
 
   int arr_values[5] = {3, 6, 2, 1, 5};

@@ -5,7 +5,7 @@ The `<fstream>` header provides most functionalities we will need to write and r
 We use the `ofstream` object to write data to a file. You simply declare this variable then call its `open` function and pass the name of the file you want to store data in.
 
 ```cpp
-ofstream outputfile;
+std::ofstream outputfile;
 outputfile.open("output.txt");
 ```
 
@@ -24,7 +24,7 @@ outputfile.close();
 You can try compiling and running `output.cpp` to see an example of how this works.
 
 ```
-g++ -std=c++17 output.cpp -o output
+clang++ -std=c++17 output.cpp -o output
 ./output
 ```
 
@@ -34,7 +34,7 @@ After running the program, you will notice that it produces a new file called `o
 We use the `ifstream` object to read data from a file. You simply declare this variable then call its `open` function and pass the name of the file you want to read data from.
 
 ```cpp
-ifstream inputfile;
+std::ifstream inputfile;
 inputfile.open("output.txt");
 ```
 
@@ -57,7 +57,7 @@ You can try compiling and running `input.cpp` to see an example of how this work
 *This step assumes that you already ran `output` and created a file called `output.txt`. The program will throw an error if `output.txt` does not exist.*
 
 ```
-g++ -std=c++17 input.cpp -o input
+clang++ -std=c++17 input.cpp -o input
 ./input
 ```
 
@@ -70,7 +70,7 @@ Arrays are often useful when working with files. They allow us to store all valu
 The example below shows how we iterate through an array and write its contents into a file. If you notice, it looks almost exactly like displaying an array's values to the screen, but we write it to the output filestream instead.
 
 ```cpp
-ofstream outputfile;
+std::ofstream outputfile;
 outputfile.open("array_output.txt");
 
 int arr_values[5] = {3, 6, 2, 1, 5};
@@ -84,7 +84,7 @@ for (int i = 0; i < 5; i++)
 You can try compiling and running `array_output.cpp` to see an example of how this works.
 
 ```
-g++ -std=c++17 array_output.cpp -o array_output
+clang++ -std=c++17 array_output.cpp -o array_output
 ./array_output
 ```
 
@@ -96,7 +96,7 @@ The example below shows how we load data from a file and store it into an array.
 Also, take note of the data type the array contains. In the example below, `arr_values` is an integer array, so when we extract values from the inputfile, it knows that it should retrieve an integer value so it can be stored into an integer-sized container.
 
 ```cpp
-  ifstream inputfile;
+  std::ifstream inputfile;
   inputfile.open("array_output.txt");
   int size = 0;
   inputfile >> size; // identify the number of elements and use it to define the array size
@@ -110,7 +110,7 @@ Also, take note of the data type the array contains. In the example below, `arr_
 
   // Display data stored in the array
   for (int i = 0; i < size; i++)
-    cout << arr_values[i] << "\n";
+    std::cout << arr_values[i] << "\n";
     
   inputfile.close();
 ```
@@ -120,6 +120,6 @@ You can try compiling and running `array_input.cpp` to see an example of how thi
 *This step assumes that you already ran `array_output` and created a file called `array_output.txt`. The program will throw an error if `array_output.txt` does not exist.*
 
 ```
-g++ -std=c++17 array_input.cpp -o array_input
+clang++ -std=c++17 array_input.cpp -o array_input
 ./array_input
 ```

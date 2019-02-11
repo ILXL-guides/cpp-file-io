@@ -2,10 +2,9 @@
 // values to a file
 #include <fstream>
 #include <iostream>
-using namespace std;
 
 int main() {
-  ofstream outputFile; // variable holding connection to an output file
+  std::ofstream outputFile; // variable holding connection to an output file
   outputFile.open("output.txt");
 
   // write data to the output file (1 string and 2 integers)

@@ -8,8 +8,8 @@ int main() {
   outputFile.open("output.txt");
 
   // write data to the output file (1 string and 2 integers)
-  outputFile << "Hello!" << endl;
-  outputFile << 0 << " " << 1 << endl;
+  outputFile << "Hello!\n";
+  outputFile << 0 << " " << 1 << "\n";
 
   outputFile.close();
   return 0;

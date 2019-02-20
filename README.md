@@ -43,7 +43,7 @@ You can use the extraction operator (>>) with the `ifstream` object to read data
 ```cpp
 std::string line;
 inputfile >> line;
-cout << line;
+std::cout << line;
 ```
 
 Don't forget to close the file to ensure that the data does not get corrupted.

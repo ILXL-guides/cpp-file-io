@@ -12,7 +12,7 @@ outputfile.open("output.txt");
 You can use the insertion operator (<<) with the `ofstream` object to write data to the file. It's syntax is very similar to how we use `cout`. We are only using the name of the `ofstream` object instead; `outputfile` in this particular example.
 
 ```cpp
-outputfile << "Hello" << endl;
+outputfile << "Hello\n";
 ```
 
 Don't forget to close the file to ensure that all data is stored properly.

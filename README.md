@@ -41,7 +41,7 @@ inputfile.open("output.txt");
 You can use the extraction operator (>>) with the `ifstream` object to read data from a file. It's syntax is very similar to how we use `cin`. We are only using the name of the `ifstream` object instead; `inputfile` in this particular example. The code below will extract the first string from the file and store it inside of the variable `line`. We can display its value using `cout`.
 
 ```cpp
-string line;
+std::string line;
 inputfile >> line;
 cout << line;
 ```

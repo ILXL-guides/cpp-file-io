@@ -4,23 +4,23 @@
 #include <string>
 
 int main() {
-  string line;
+  std::string line;
   int num;
 
-  std::ifstream inputFile; // variable holding connection to the input file
-  inputFile.open("output.txt");
+  std::ifstream input_file; // variable holding connection to the input file
+  input_file.open("output.txt");
 
   // read and display string data from the file
-  inputFile >> line;
+  input_file >> line;
   std::cout << "I read the following string: " << line << "\n";
 
   // read and display two integer values from the file
-  inputFile >> num;
+  input_file >> num;
   std::cout << "This is the first int: " << num << "\n";
-  inputFile >> num;
+  input_file >> num;
   std::cout << "This is the second int: " << num << "\n";
 
-  inputFile.close();
+  input_file.close();
 
   return 0;
 }
